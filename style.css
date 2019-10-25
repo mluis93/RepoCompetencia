@@ -1,0 +1,371 @@
+@keyframes anticuerpo {
+    0%{
+        transform: translateY(10vh);
+    }
+    100%{
+        transform: translateY(-100vh);
+    }}
+
+*{
+    margin: 0;
+}
+
+body{
+    background-color: rgb(228, 22, 6);
+    background-image: url(./img/img-fondo.png);
+    overflow: hidden;
+}
+
+.contenedor{
+    background: linear-gradient(90deg, #ff7b00 10%, #ff2e00 90%);
+    margin: 0 auto;
+    height: 100vh;
+    width: 80%;
+}
+#antic {
+  background: url("./img/anticuerpo.png") no-repeat;
+    background-size:cover;
+    height: 50px;
+    width: 60px;
+    display: block;
+    position: absolute;
+    left: 5vw;
+    bottom: 23vh;
+    animation: anticuerpo 1s linear ;
+}
+.boton {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#b1{
+    
+    top: 5px;
+    position: absolute;
+    right: 20vw;
+    top: 2vh;
+    display: block;
+    animation: b1 5s infinite;
+    height: 70px;
+    width: 70px;
+    background-size: cover;
+    background-image:url(./img/b1.png);
+}
+
+#b2{
+    top: 5px;
+    position: absolute;
+    right: 20vw;
+    display: block;
+    animation: b2 5s infinite;
+    height: 70px;
+    width: 70px;
+    background-size: cover;
+    background-image: url(./img/b2.png);
+}
+
+#b3{
+    top: 5px;
+    position: absolute;
+    left: 10vw;
+    display: block;
+    animation: b3 5s infinite;
+    height: 70px;
+    width: 70px;
+    background-size: cover;
+    background-image: url(./img/b3.png);
+}
+
+#b4{
+    top: 5px;
+    position: absolute;
+    right: 20vw;
+    display: block;
+    animation: b4 4s infinite;
+    height: 70px;
+    width: 70px;
+    background-size: cover;
+    background-image: url(./img/b4.png);
+}
+
+#b5{
+    top: 5px;
+    position: absolute;
+    right: 20vw;
+    display: block;
+    animation: b5 4s infinite;
+    height: 70px;
+    width: 70px;
+    background-size: cover;
+    background-image: url(./img/b5.png);
+}
+
+#globulo{
+    
+    display: flex;
+    position: absolute;
+    left: 46%;
+     bottom: 40px;
+    height: 90px;
+    width: 90px;
+    background-size: cover;
+    background-image: url(./img/globulo.png);
+}
+
+
+
+    
+@keyframes b1 {
+  0% {
+      right: 40vw;
+      top: 2vh;
+
+      
+    }
+  
+    20% {
+      transition: ease;
+      right: 30vw;
+      top: 40vh;
+
+      
+     
+    }
+  30%{
+      transition: ease;
+      right: 35vw;
+      top:3vh;
+
+      
+  }
+    50% {
+      transition: ease;
+      right: 40vw;
+      top: 2vh;
+
+      
+      
+    }
+    75%{
+      transition: ease;
+      right: 30vw;
+      top: 1vh;
+ 
+
+    }
+  
+    100% {
+      right: 40vw;
+      top: 2vh;
+
+      
+
+
+    }
+
+  }
+  @keyframes b2 {
+      0% {
+          transition: ease;
+          right: 10vw;
+          top: 10vh;
+    
+          
+        }
+      
+        20% {
+          transition: ease;
+          right: 15vw;
+          top: 30vh;
+    
+          
+         
+        }
+      30%{
+          transition: ease;
+          right: 35vw;
+          top: 20vh;
+    
+          
+      }
+        50% {
+          transition: ease;
+          right: 10vw;
+          top: 10vh;
+    
+          
+          
+        }
+        75%{
+          transition: ease;
+          right: 60vw;
+          top: 15vh;
+     
+
+        }
+      
+        100% {
+          transition: ease;
+          right: 10vw;
+          top: 10vh;
+    
+
+   
+        }
+  
+      }
+      @keyframes b3 {
+          0% {
+               transition: ease;
+              right: 10vw;
+              top: 1vh;
+        
+              
+            }
+          
+            20% {
+              transition: ease;
+              right: 30vw;
+              top: 10vh;
+        
+              
+             
+            }
+          30%{
+              transition: ease;
+              right: 60vw;
+              top: 20vh;
+        
+              
+          }
+            50% {
+              transition: ease;
+              right: 0vw;
+              top: 20vh;
+        
+              
+              
+            }
+            75%{
+              transition: ease;
+              right: 100vw;
+              top: 15vh;
+             left: 30vw;
+  
+            }
+          
+            100% {
+              transition: ease;
+              right: 10vw;
+              top: 1vh;
+  
+       
+            }
+      
+          }
+          @keyframes b4 {
+              0% {
+                transition: ease;
+                right: 40vw;
+                top: 10vh;
+                left: 8vw;
+          
+                  
+                }
+              
+                20% {
+                  transition: ease;
+                  right: 10vw;
+                  top: 10vh;
+                  left: 30vw;
+            
+                  
+                 
+                }
+              30%{
+                  transition: ease;
+                  right: 35vw;
+                  top: 30vh;
+                  left: 20vw;
+            
+                  
+              }
+                50% {
+                  transition: ease;
+                  right: 30vw;
+                  bottom: 10vh;
+                  left: 2vw;
+                  left: 5vw;
+                  
+                  
+                }
+                75%{
+                  transition: ease;
+                  right: 5vw;
+                  bottom: 15vh;
+                  left: 10vw;
+             
+      
+                }
+              
+                100% {
+                  transition: ease;
+                  right: 40vw;
+                  top: 10vh;
+                  left: 8vw;
+            
+           
+                }
+          
+          
+          
+              }
+          
+              @keyframes b5 {
+                  0% {
+                      transition: ease;
+                      right: 50vw;
+                      bottom: 10vh;
+                
+                      
+                    }
+                  
+                    20% {
+                      transition: ease;
+                      right: 30vw;
+                      top: 50vh;
+                
+                      
+                     
+                    }
+                  30%{
+                      transition: ease;
+                      right: 35vw;
+                      bottom: 30vh;
+                
+                      
+                  }
+                    50% {
+                      transition: ease;
+                      right: 40vw;
+                      bottom: 10vh;
+                
+                      
+                      
+                    }
+                    75%{
+                      transition: ease;
+                      right: 20vw;
+                      bottom: 15vh;
+                 
+          
+                    }
+                  
+                    100% {
+                      transition: ease;
+                      right: 50vw;
+                      bottom: 10vh;       
+                    }
+              
+                  }
