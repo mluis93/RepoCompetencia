@@ -22,55 +22,88 @@ function mover(event){
 }
 document.onkeydown = mover
 
-setInterval(function() {
-var acx = document.querySelector('#antic').getClientRects().item(0).x
-var acy = document.querySelector('#antic').getClientRects().item(0).y
-var ba1x = document.querySelector('#b1').getClientRects().item(0).x
-var ba1y = document.querySelector('#b1').getClientRects().item(0).y
-var ba2x = document.querySelector('#b2').getClientRects().item(0).x
-var ba2y = document.querySelector('#b2').getClientRects().item(0).y
-var ba3x = document.querySelector('#b3').getClientRects().item(0).x
-var ba3y = document.querySelector('#b3').getClientRects().item(0).y
-var ba4x = document.querySelector('#b4').getClientRects().item(0).x
-var ba4y = document.querySelector('#b4').getClientRects().item(0).y
-var ba5x = document.querySelector('#b5').getClientRects().item(0).x
-var ba5y = document.querySelector('#b5').getClientRects().item(0).y
-
-if (((acx - ba1x) <= 45.5)&&((acx - ba1x) >= -40.5) && (acy - ba1y) < 1) {
-	document.querySelector('#b1').style.display = "none"
-	document.querySelector('#b2').style.display = "none"
-	document.querySelector('#b3').style.display = "none"
-	document.querySelector('#b4').style.display = "none"
-	document.querySelector('#b5').style.display = "none"
-	puntos = puntos + 500
-	window.location.href = "./final.html"
-}
-},50)
-
-setInterval(function() {
-var acx = document.querySelector('#antic').getClientRects().item(0).x
-var acy = document.querySelector('#antic').getClientRects().item(0).y
-var ba1x = document.querySelector('#b1').getClientRects().item(0).x
-var ba1y = document.querySelector('#b1').getClientRects().item(0).y
-var ba2x = document.querySelector('#b2').getClientRects().item(0).x
-var ba2y = document.querySelector('#b2').getClientRects().item(0).y
-var ba3x = document.querySelector('#b3').getClientRects().item(0).x
-var ba3y = document.querySelector('#b3').getClientRects().item(0).y
-var ba4x = document.querySelector('#b4').getClientRects().item(0).x
-var ba4y = document.querySelector('#b4').getClientRects().item(0).y
-var ba5x = document.querySelector('#b5').getClientRects().item(0).x
-var ba5y = document.querySelector('#b5').getClientRects().item(0).y
+var disparar = false;
+var cantidadBa = 5;
 
 
-if (((acx - ba2x) <= 45.5)&&((acx - ba2x) >= -40.5) && (acy - ba2y) < 1) {
-	document.querySelector('#b2').style.display = "none"
-	puntos = puntos + 500
-}
+setInterval(function(){
+
+//obtener cordenadas
+var ba1x = document.getElementById("b1").getClientRects().item(0).x;
+var ba1y = document.getElementById("b1").getClientRects().item(0).y;
+var ba2x = document.getElementById("b2").getClientRects().item(0).x;
+var ba2y = document.getElementById("b2").getClientRects().item(0).y;	
+var ba3x = document.getElementById("b3").getClientRects().item(0).x;
+var ba3y = document.getElementById("b3").getClientRects().item(0).y;
+var ba4x = document.getElementById("b4").getClientRects().item(0).x;
+var ba4y = document.getElementById("b4").getClientRects().item(0).y;
+var ba5x = document.getElementById("b5").getClientRects().item(0).x;
+var ba5y = document.getElementById("b5").getClientRects().item(0).y;
+
+		if(disparar){
+	    var acx = document.getElementById("antic").getClientRects().item(0).x;
+        var acy = document.getElementById("antic").getClientRects().item(0).y; 
+		
+	//Colapso
+		if ((acy< ba2y && acy> ba2y-70) &&( acx> ba2x && acx < ba2x+70)) {
+        document.querySelector('#b2').style.zIndex = "-99"
+		document.querySelector('#b2').style.position = "relative";
+		document.querySelector('#b2').style.top = "-9999";
+				
+	    puntos = puntos + 500;
+		cantidadBa--
+		}
+		if ((acy< ba1y && acy> ba1y-70 ) &&( acx> ba1x && acx < ba1x+70)) {
+        document.querySelector('#b1').style.zIndex = "-99"
+		document.querySelector('#b1').style.position = "relative";
+		document.querySelector('#b1').style.top = "-9999";	
+	    puntos = puntos + 500;
+		cantidadBa--
+		}
+		if ((acy< ba3y  && acy> ba3y-70)&&( acx> ba3x && acx < ba3x+70)) {
+        document.querySelector('#b3').style.zIndex = "-99"
+		document.querySelector('#b3').style.position = "relative";
+		document.querySelector('#b3').style.left = "-9999";		
+	    puntos = puntos + 500;
+		cantidadBa--
+		}
+		if ((acy< ba4y && acy> ba4y-70 ) &&( acx> ba4x && acx < ba4x+70)) {
+        document.querySelector('#b4').style.zIndex = "-99"
+		document.querySelector('#b4').style.position = "relative";
+		document.querySelector('#b4').style.top = "-9999";
+			cantidadBa--
+	    puntos = puntos + 500;	
+		}
+		if ((acy< ba5y  && acy> ba5y-70) &&( acx> ba5x && acx < ba5x+70)) {
+        document.querySelector('#b5').style.zIndex = "-99"
+		document.querySelector('#b5').style.position = "relative";
+		document.querySelector('#b5').style.top = "-9999";
+	    puntos = puntos + 500;
+		cantidadBa--
+		}
+	   //si mueren todos
+	if(cantidadBa == 0){
+		var modalFin = document.getElementById("modal-finjuego")
+		var puntaje = document.getElementById("puntaje")
+        puntaje.innerHTML = "<p>"+puntos+"</p>"
+		modalFin.style.display = "block";
+		document.body.style.backgroundImage = "url(./img/img5.png)"
+		var contenedor = document.getElementsByClassName("contenedor");
+		contenedor[0].style.display = "none";
+	}
+
+	}
+	
+	
 },100)
 
 
 setTimeout(function() {
-	var h1= document.createElement('H1')
-	h1.innerHTML = "GAME OVER"
-	window.location.href = "./final.html"
+		var modalFin = document.getElementById("modal-finjuego")
+		var puntaje = document.getElementById("puntaje")
+        puntaje.innerHTML = "<p>"+puntos+"</p>"
+		modalFin.style.display = "block";
+		document.body.style.backgroundImage = "url(./img/img5.png)"
+		var contenedor = document.getElementsByClassName("contenedor");
+		contenedor[0].style.display = "none";
 },60000)
