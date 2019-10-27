@@ -1,16 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
-html {
-    background-color: rgba(253, 72, 0, 0.301);
-    font-family: 'Press Start 2P', cursive;
-    background-image: url(./img/img5.png);
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    margin-top: 4vw;
-}
-
 .caja {
     width: 40%;
     height: 40vw;
@@ -35,4 +23,13 @@ button {
 
 .puntuacion {
     margin-top: 9%;
+}
+
+
+#modal-finjuego{
+	display: flex;
+    justify-content: center;
+    margin-top: 4vw;
+	font-family: 'Press Start 2P', cursive;
+	display: none;
 }
